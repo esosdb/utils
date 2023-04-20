@@ -91,7 +91,7 @@ User.findById(
 - Update a data by id on User Schema
 
 ```js
-User.findById(
+User.updateById(
   "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   {
     name: "Esosdb",
