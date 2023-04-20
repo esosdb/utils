@@ -15,12 +15,8 @@
     "db",
     "json database"
   ],
-  "author": "Ramco",
+  "author": "mrturk",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ramazaneris/esosdb-utils/issues"
-  },
-  "homepage": "https://github.com/ramazaneris/esosdb-utils#readme",
   "devDependencies": {
     "@types/node": "^18.15.11"
   },
