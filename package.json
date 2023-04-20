@@ -1,0 +1,30 @@
+{
+  "name": "@esosdb/utils",
+  "version": "1.0.0",
+  "description": "Utils for esosdb",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/ramazaneris/esosdb-utils.git",
+  "keywords": [
+    "esosdb",
+    "json",
+    "database",
+    "db",
+    "json database"
+  ],
+  "author": "Ramco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ramazaneris/esosdb-utils/issues"
+  },
+  "homepage": "https://github.com/ramazaneris/esosdb-utils#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.11"
+  },
+  "dependencies": {
+    "esosdb": "^2.1.2"
+  }
+}
