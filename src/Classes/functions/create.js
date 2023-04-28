@@ -26,8 +26,8 @@ function createData(name, props, value, db, timestamps) {
     }
   }
   if (timestamps) {
-    target["createdAt"] = new Date();
     target["updatedAt"] = new Date();
+    target["createdAt"] = new Date();
   }
   return db.set(`${name}s.${target.id}`, target, (cb) => {
     return cb[target.id];

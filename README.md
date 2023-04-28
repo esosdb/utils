@@ -52,7 +52,8 @@ import { UserSchema } from "./schemas/UserSchema.js"; //You must be import after
 ## Examples
 
 - First example - create a schema
-  `new Schema("it's schema name and must be string",{"props' names":{type:string|boolean|number|object,required:boolean}},"timestamps must be boolean")`
+
+`new Schema("it's schema name and must be string",{"props' names":{type:string|boolean|number|object,required:boolean}},"timestamps must be boolean")`
 
 ```js
 // ./schemas/UserSchema.js
@@ -74,7 +75,7 @@ module.exports = { User };
 
 ```js
 User.create({ name: "Esos", age: 1 }, (cb) => {
-  console.log(cb);
+  console.log(cb); //return {id:"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",name:"Esos",age:1,updatedAt:1970-01-01T01:00:00.000Z,createdAt:1970-01-01T01:00:00.000Z}
 });
 ```
 
