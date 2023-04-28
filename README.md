@@ -7,6 +7,7 @@ Utils for esosdb
 ## Table of contents
 
 - [Example Uses](#examples)
+  - [Setup](#setup)
   - [create a data](#create)
   - [find a data by id](#findbyid)
   - [update a data by id](#updatebyid)
@@ -26,27 +27,32 @@ CommonJS
 
 ```js
 const { DataBase } = require("esosdb");
-const { Schema } = require("@esosdb/utils");
+const { Schema, connect } = require("@esosdb/utils");
 const db = new DataBase({
   path: "./esosdb/db.json", // this is default, can write the what you want
   space: 2, //shold be a number (default:0)
 });
+connect(db);
+const { UserSchema } = require("./schemas/UserSchema.js"); //You must be import after connect() function
 ```
 
 EsModule
 
 ```js
 import { DataBase } from "esosdb";
-import { Schema } from "@esosdb/utils";
+import { Schema, connect } from "@esosdb/utils";
 const db: DataBase = new DataBase({
   path: "./esosdb/db.json", // this is default, can write the what you want
   space: 2, //shold be a number (default:0)
 });
+connect(db);
+import { UserSchema } from "./schemas/UserSchema.js"; //You must be import after connect() function
 ```
 
 ## Examples
 
 - First example - create a schema
+  `new Schema("it's schema name and must be string",{"props' names":{type:string|boolean|number|object,required:boolean}},"timestamps must be boolean")`
 
 ```js
 // ./schemas/UserSchema.js
@@ -55,7 +61,7 @@ let userProps = {
   age: { type: "number", required: true },
 };
 
-let User = new Schema("user", userProps, db);
+let User = new Schema("user", userProps, true);
 
 module.exports = { User };
 ```
@@ -64,7 +70,7 @@ module.exports = { User };
 
 - Create a data on User Schema
 
-`User.create(value,callback)`
+`User.create(value,callback?)`
 
 ```js
 User.create({ name: "Esos", age: 1 }, (cb) => {
@@ -75,7 +81,8 @@ User.create({ name: "Esos", age: 1 }, (cb) => {
 ### findById
 
 - Find a data by id on User Schema
-  `User.findById(id,callback)`
+
+`User.findById(id,callback?)`
 
 ```js
 User.findById(
@@ -90,13 +97,15 @@ User.findById(
 
 - Update a data by id on User Schema
 
+`User.updateById(id,new values,callback?)`
+
 ```js
 User.updateById(
   "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   {
     name: "Esosdb",
     age: 2,
-  } /* it's created by automatically, you can create as manually, just add to Schema*/,
+  },
   (cb) => {
     console.log(cb); //return {name:"Esosdb", age:2}
   }
@@ -106,6 +115,8 @@ User.updateById(
 ### deleteById
 
 - Delete a data by id on User Schema
+
+`User.deleteById(id,callback?)`
 
 ```js
 User.deleteById("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", (cb) => {
