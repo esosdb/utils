@@ -4,14 +4,7 @@
 
 Utils for esosdb
 
-## Table of contents
-
-- [Example Uses](#examples)
-  - [Setup](#setup)
-  - [create a data](#create)
-  - [find a data by id](#findbyid)
-  - [update a data by id](#updatebyid)
-  - [delete a data by id](#deletebyid)
+Do you want more details? Check [Docs](https://esosdb.mbps.tk/esosdb-utils)
 
 ## Badges
 
@@ -26,9 +19,9 @@ Utils for esosdb
 CommonJS
 
 ```js
-const { DataBase } = require("esosdb");
+const { Database } = require("esosdb");
 const { Schema, connect } = require("@esosdb/utils");
-const db = new DataBase({
+const db = new Database({
   path: "./esosdb/db.json", // this is default, can write the what you want
   space: 2, //shold be a number (default:0)
 });
@@ -39,9 +32,9 @@ const { UserSchema } = require("./schemas/UserSchema.js"); //You must be import 
 EsModule
 
 ```js
-import { DataBase } from "esosdb";
+import { Database } from "esosdb";
 import { Schema, connect } from "@esosdb/utils";
-const db: DataBase = new DataBase({
+const db = new Database({
   path: "./esosdb/db.json", // this is default, can write the what you want
   space: 2, //shold be a number (default:0)
 });
@@ -52,8 +45,6 @@ import { UserSchema } from "./schemas/UserSchema.js"; //You must be import after
 ## Examples
 
 - First example - create a schema
-
-`new Schema("it's schema name and must be string",{"props' names":{type:string|boolean|number|object,required:boolean}},"timestamps must be boolean")`
 
 ```js
 // ./schemas/UserSchema.js
@@ -69,10 +60,6 @@ module.exports = { User };
 
 ### create
 
-- Create a data on User Schema
-
-`User.create(value,callback?)`
-
 ```js
 User.create({ name: "Esos", age: 1 }, (cb) => {
   console.log(cb); //return {id:"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",name:"Esos",age:1,updatedAt:1970-01-01T01:00:00.000Z,createdAt:1970-01-01T01:00:00.000Z}
@@ -80,10 +67,6 @@ User.create({ name: "Esos", age: 1 }, (cb) => {
 ```
 
 ### findById
-
-- Find a data by id on User Schema
-
-`User.findById(id,callback?)`
 
 ```js
 User.findById(
@@ -95,10 +78,6 @@ User.findById(
 ```
 
 ### updateById
-
-- Update a data by id on User Schema
-
-`User.updateById(id,new values,callback?)`
 
 ```js
 User.updateById(
@@ -114,10 +93,6 @@ User.updateById(
 ```
 
 ### deleteById
-
-- Delete a data by id on User Schema
-
-`User.deleteById(id,callback?)`
 
 ```js
 User.deleteById("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", (cb) => {

@@ -1,10 +1,10 @@
-import { DataBase } from "esosdb";
+import { Database } from "esosdb";
 
 declare type SchemaProps = {
   [key: string]: { type: string; required?: boolean };
 };
 
-declare function connect(db: DataBase): void;
+declare function connect(db: Database): void;
 
 declare class Schema {
   constructor(

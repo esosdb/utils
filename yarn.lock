@@ -7,7 +7,7 @@
   "resolved" "https://registry.npmjs.org/@types/node/-/node-18.15.11.tgz"
   "version" "18.15.11"
 
-"esosdb@^2.1.21":
-  "integrity" "sha512-VP1OW1WQHSY+uIoz5cdRUdRxR41VAxlHiOQYPP2ocmhq56eelTCjKDCgCZm/ivrFehrXP+IJz/2MRPCPlB+dCA=="
-  "resolved" "https://registry.npmjs.org/esosdb/-/esosdb-2.1.21.tgz"
-  "version" "2.1.21"
+"esosdb@^2.1.3":
+  "integrity" "sha512-pmP1FdfSF1wpXpX1MRhE0mMF3zINi8AMRq7Sd40bFfzGVGks4acQGRCMKrfHITRBZEZzDCNXLE8iNbrP+QRjpA=="
+  "resolved" "https://registry.npmjs.org/esosdb/-/esosdb-2.1.3.tgz"
+  "version" "2.1.3"
