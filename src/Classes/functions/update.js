@@ -3,7 +3,10 @@ function updateData(name, id, props, value, db, timestamps) {
   let target = db.get(`${name}s.${id}`);
   if (!target) return console.error(`Not found ${name} with "${id}"`);
   for (let i = 0; i < valueArr.length; i++) {
-    if (props[valueArr[i]].type === typeof value[valueArr[i]]) {
+    if (
+      props[valueArr[i]].type === typeof value[valueArr[i]] ||
+      Array.isArray(value[valueArr[i]])
+    ) {
       target[valueArr[i]] = value[valueArr[i]];
     } else {
       return console.error(

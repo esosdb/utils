@@ -51,6 +51,7 @@ import { UserSchema } from "./schemas/UserSchema.js"; //You must be import after
 let userProps = {
   name: { type: "string", required: true },
   age: { type: "number", required: true },
+  //types are string|number|object|any[]|string[]|number[]
 };
 
 let User = new Schema("user", userProps, true);
@@ -60,6 +61,8 @@ module.exports = { User };
 
 ### create
 
+`User.create(value,callback)`
+
 ```js
 User.create({ name: "Esos", age: 1 }, (cb) => {
   console.log(cb); //return {id:"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",name:"Esos",age:1,updatedAt:1970-01-01T01:00:00.000Z,createdAt:1970-01-01T01:00:00.000Z}
@@ -67,6 +70,8 @@ User.create({ name: "Esos", age: 1 }, (cb) => {
 ```
 
 ### findById
+
+`User.findById(id,callback)`
 
 ```js
 User.findById(
@@ -77,7 +82,19 @@ User.findById(
 );
 ```
 
+### findByElement
+
+`User.findByElement(element,callback)`
+
+```js
+User.findByElement({ name: "Esos" }, (cb) => {
+  console.log(cb); //return {name:"Esos", age:1}
+});
+```
+
 ### updateById
+
+`User.updateById(id,new values,callback)`
 
 ```js
 User.updateById(
@@ -94,10 +111,12 @@ User.updateById(
 
 ### deleteById
 
+`User.deleteById(id,callback)`
+
 ```js
 User.deleteById("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", (cb) => {
   console.log(cb); //return true
 });
 ```
 
-### esosdb
+#### esosdb

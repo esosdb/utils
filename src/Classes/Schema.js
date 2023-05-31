@@ -2,6 +2,8 @@ const { getDatabase } = require("../GlobalFunctions/connect");
 const { createData } = require("./functions/create");
 const { findData } = require("./functions/find");
 const { updateData } = require("./functions/update");
+const { findByElement } = require("./functions/findByElement");
+
 class Schema {
   name;
   db;
@@ -26,6 +28,9 @@ class Schema {
   }
   findById(id, callback = () => {}) {
     return callback(findData(this.name, id, this.db));
+  }
+  findByElement(element, callback = () => {}) {
+    return callback(findByElement(this.name, element, this.db));
   }
   updateById(id, value, callback = () => {}) {
     return callback(
