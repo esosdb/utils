@@ -7,6 +7,7 @@ declare type Types = {
   object: object;
   "string[]": string[];
   "number[]": number[];
+  boolean: boolean;
 };
 
 declare type SchemaProps<T extends keyof Types> = {
