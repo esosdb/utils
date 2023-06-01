@@ -1,7 +1,7 @@
 const { getDatabase } = require("../GlobalFunctions/connect");
 const { createData } = require("./functions/create");
-const { findData } = require("./functions/find");
-const { updateData } = require("./functions/update");
+const { findData } = require("./functions/findById");
+const { updateData } = require("./functions/updateById");
 const { findByElement } = require("./functions/findByElement");
 
 class Schema {
