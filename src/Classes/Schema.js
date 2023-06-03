@@ -3,6 +3,7 @@ const { createData } = require("./functions/create");
 const { findData } = require("./functions/findById");
 const { updateData } = require("./functions/updateById");
 const { findByElement } = require("./functions/findByElement");
+const { deleteData } = require("./functions/deleteById");
 
 class Schema {
   name;
@@ -38,7 +39,7 @@ class Schema {
     );
   }
   deleteById(id, callback = () => {}) {
-    return callback(updateData(this.name, id, this.db));
+    return callback(deleteData(this.name, id, this.db));
   }
 }
 
