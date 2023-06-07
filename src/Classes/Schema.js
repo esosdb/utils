@@ -14,7 +14,7 @@ class Schema {
     let database = getDatabase();
     if (!database)
       return console.error(
-        "Database not found, use connect() to connect to database"
+        `Database not found, use the connect() to connect to database before import the ${name.toUpperCase()} schema`
       );
     this.name = name;
     this.db = getDatabase();

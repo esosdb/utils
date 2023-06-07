@@ -3,11 +3,11 @@ function findByElement(name, element, db) {
     var property = Object.keys(element)[0];
     var value = element[property];
     let allData = db.get(`${name}s`);
-    let foundData;
+    let foundData = [];
     Object.keys(allData).forEach((key) => {
       let dataElement = allData[key];
       if (dataElement[property] === value) {
-        foundData = dataElement;
+        foundData.push(dataElement);
       }
     });
     return foundData;

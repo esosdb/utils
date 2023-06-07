@@ -1,6 +1,6 @@
 {
   "name": "@esosdb/utils",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Utils for esosdb",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
