@@ -22,6 +22,6 @@
     "@types/node": "^18.15.11"
   },
   "dependencies": {
-    "esosdb": "^2.1.3"
+    "esosdb": "^2.1.4"
   }
 }
